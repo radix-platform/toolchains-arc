@@ -1,0 +1,7 @@
+
+# host
+BUILD_HOST = true
+
+
+# s8xx-newlib:
+BUILD_S8XX_NEWLIB = true

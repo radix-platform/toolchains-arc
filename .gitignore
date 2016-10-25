@@ -1,0 +1,34 @@
+
+# Target build dirs
+.noarch/
+.host/
+
+.s8xx-newlib/
+
+# Hidden files (each file)
+.makefile
+
+# Tarballs
+*.gz
+*.bz2
+*.xz
+*.tgz
+*.txz
+
+# Signatures
+*.asc
+*.sig
+*.sign
+*.sha1sum
+
+# Patches
+*.patch
+
+# Default linux config files
+*.defconfig
+
+# Object Files
+*.[ao]
+
+# backup copies
+*~

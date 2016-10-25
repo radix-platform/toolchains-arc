@@ -1,0 +1,22 @@
+
+build:
+=====
+
+cd products && make -j32 all
+
+make targets:
+============
+
+tree_clean      - clean whole tree including dist and sources(.makefile stamps) directories but
+                  !!!NOT CLEAN downloaded sources!!!
+
+downloads_clean - remove downloaded sources in sources directory
+
+
+NOTE:
+====
+  Directory names in products folder shouldn't match with any toolchain name.
+  For example, if we have toolchain name 's8xx-newlib' then directory name
+  for this toolchain should be at least 'S8XX-newlib'.
+
+
