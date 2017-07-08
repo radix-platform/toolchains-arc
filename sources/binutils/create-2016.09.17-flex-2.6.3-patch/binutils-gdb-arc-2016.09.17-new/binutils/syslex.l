@@ -36,10 +36,6 @@
 #define YY_NO_UNPUT
 #endif
 
-#ifndef yywrap
-static int yywrap (void) { return 1; }
-#endif
-
 extern int yylex (void);
 %}
 %%

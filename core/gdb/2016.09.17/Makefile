@@ -18,6 +18,8 @@ SRC_DIR          = $(TARGET_BUILD_DIR)/binutils-gdb-arc-2016.09.17
 src_dir_name     = binutils-gdb-arc-2016.09.17
 src_done         = $(SRC_DIR)/.source-done
 
+PATCHES       = PATCHES
+
 build_dir        = $(TARGET_BUILD_DIR)/build
 
 build_target     = $(TARGET_BUILD_DIR)/.built
@@ -44,6 +46,7 @@ endif
 
 $(src_done): $(SRC_ARCHIVE) $(PATCHES_DEP)
 	$(UNPACK_SRC_ARCHIVE)
+	$(APPLY_PATCHES)
 	@touch $@
 
 $(build_target): $(src_done)

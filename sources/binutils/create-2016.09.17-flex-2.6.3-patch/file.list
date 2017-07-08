@@ -1,4 +1,8 @@
 binutils-gdb-arc-2016.09.17/binutils/arlex.l
 binutils-gdb-arc-2016.09.17/binutils/deflex.l
 binutils-gdb-arc-2016.09.17/binutils/syslex.l
+binutils-gdb-arc-2016.09.17/gas/config/bfin-lex.l
+binutils-gdb-arc-2016.09.17/gas/itbl-lex.l
+binutils-gdb-arc-2016.09.17/gdb/ada-lex.l
+binutils-gdb-arc-2016.09.17/ld/ldlex.h
 binutils-gdb-arc-2016.09.17/ld/ldlex.l
