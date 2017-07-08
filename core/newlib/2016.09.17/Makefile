@@ -26,6 +26,8 @@ SRC_DIR         = $(TARGET_BUILD_DIR)/newlib-arc-2016.09.17
 src_dir_name    = newlib-arc-2016.09.17
 src_done        = $(TARGET_BUILD_DIR)/.source-done
 
+PATCHES       = PATCHES
+
 build_dir       = $(TARGET_BUILD_DIR)/build
 
 install_dir         = $(TOOLCHAIN_PATH)
@@ -85,6 +87,7 @@ endif
 
 $(src_done): $(SRC_ARCHIVE) $(PATCHES_DEP)
 	$(UNPACK_SRC_ARCHIVE)
+	$(APPLY_PATCHES)
 	@touch $@
 
 $(headers_target): $(src_done)
