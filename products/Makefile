@@ -10,7 +10,7 @@ include ../build-system/config.mk
 
 
 ifeq ($(TOOLCHAIN),$(TOOLCHAIN_S8XX_NEWLIB))
-REQUIRES  = products/S8XX-newlib/1.3.2
+REQUIRES  = products/S8XX-newlib/1.3.3
 endif
 
 # ======= __END_OF_REQUIRES__ =======
