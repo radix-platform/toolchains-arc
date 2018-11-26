@@ -2,7 +2,7 @@
 
 COMPONENT_TARGETS = $(TOOLCHAIN_S8XX_NEWLIB)
 
-export TOOLCHAIN_VERSION = 1.2.3
+export TOOLCHAIN_VERSION = 1.3.4
 
 include ../../../build-system/config.mk
 

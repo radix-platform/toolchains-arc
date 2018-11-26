@@ -8,19 +8,15 @@ include ../../build-system/config.mk
 
 url         = $(DOWNLOAD_SERVER)/sources/tools/synopsys/arc-toolchain/gcc
 
-versions    = arc-2016.09.17
+versions    = arc-2018.09.12
 
 pkgname     = gcc
 
 tarballs    = $(addsuffix .tar.xz, $(addprefix $(pkgname)-, $(versions)))
 sha1s       = $(addsuffix .sha1sum, $(tarballs))
 
-patches     = $(CURDIR)/patches/gcc-arc-2016.09.17-ubsan-c.patch
 
-.NOTPARALLEL: $(patches)
-
-
-BUILD_TARGETS = $(tarballs) $(sha1s) $(patches)
+BUILD_TARGETS = $(tarballs) $(sha1s)
 
 
 include ../../build-system/core.mk
@@ -48,10 +44,5 @@ $(sha1s): $(tarballs)
 	   fi ; \
 	 done
 
-$(patches): $(sha1s)
-	@echo -e "\n======= Create Patches =======\n" ; \
-	 ( cd create-2016.09.17-ubsan-c-patch ; ./create.patch.sh ) ; \
-	 echo -e "\n"
-
 download_clean:
-	@rm -f $(tarballs) $(sha1s) $(patches)
+	@rm -f $(tarballs) $(sha1s)
