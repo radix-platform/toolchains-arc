@@ -12,7 +12,8 @@ WGET_OPTIONS         = -q -N
 
 CACHED_CC_OUTPUT     = /opt/extra/ccache
 
-TOOLCHAINS_BASE_PATH = /opt/toolchain
+TOOLCHAINS_BASE_PATH = /opt/toolchains
+
 TOOLCHAINS_VERSION   = 1.0.0
 
 

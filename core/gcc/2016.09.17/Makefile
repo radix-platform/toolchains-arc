@@ -28,8 +28,8 @@ endif
 # ======= __END_OF_REQUIRES__ =======
 
 tar_xz_archive        = $(SRC_PACKAGE_PATH)/gcc/gcc-arc-2016.09.17.tar.xz
-tar_bz2_archive_gmp   = $(SRC_PACKAGE_PATH)/GNU/gmp/gmp-6.1.0.tar.bz2
-tar_bz2_archive_mpfr  = $(SRC_PACKAGE_PATH)/GNU/mpfr/mpfr-3.1.3.tar.bz2
+tar_xz_archive_gmp    = $(SRC_PACKAGE_PATH)/GNU/gmp/gmp-6.1.0.tar.xz
+tar_xz_archive_mpfr   = $(SRC_PACKAGE_PATH)/GNU/mpfr/mpfr-3.1.3.tar.xz
 tar_gz_archive_mpc    = $(SRC_PACKAGE_PATH)/GNU/mpc/mpc-1.0.3.tar.gz
 SRC_ARCHIVE           = $(tar_xz_archive)
 SRC_DIR               = $(TARGET_BUILD_DIR)/gcc-arc-2016.09.17
@@ -89,14 +89,14 @@ $(src_done): $(SRC_ARCHIVE) $(PATCHES_DEP)
 	@touch $@
 
 $(gmp_src_done): $(src_done)
-	@echo "Expanding $(tar_bz2_archive_gmp)"
-	@tar xjf $(tar_bz2_archive_gmp) -C $(TARGET_BUILD_DIR)
+	@echo "Expanding $(tar_xz_archive_gmp)"
+	@tar xJf $(tar_xz_archive_gmp) -C $(TARGET_BUILD_DIR)
 	@cd $(SRC_DIR); ln -sf ../gmp-6.1.0 gmp
 	@touch $@
 
 $(mpfr_src_done): $(src_done)
-	@echo "Expanding $(tar_bz2_archive_mpfr)"
-	@tar xjf $(tar_bz2_archive_mpfr) -C $(TARGET_BUILD_DIR)
+	@echo "Expanding $(tar_xz_archive_mpfr)"
+	@tar xJf $(tar_xz_archive_mpfr) -C $(TARGET_BUILD_DIR)
 	@cd $(SRC_DIR); ln -sf ../mpfr-3.1.3 mpfr
 	@touch $@
 
