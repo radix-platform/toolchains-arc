@@ -95,9 +95,9 @@ $(headers_target): $(src_done)
 	@cp -ar $(TARGET_BUILD_DIR)/$(src_dir_name)/newlib/libc/include $(headers_install_dir)/sys-include
 	@if [ -n "`cat $(SRC_DIR)/newlib/configure | grep _NEWLIB_VERSION | cut -f3 -d'"' | sed 's,[^0-9.],,g'`" ] ; then \
 	   version_string="`cat $(SRC_DIR)/newlib/configure | grep _NEWLIB_VERSION | cut -f3 -d'"' | sed 's,[^0-9.],,g'`" ; \
-	   echo "newlib-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	   echo "  newlib-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	 else \
-	   echo "$(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	   echo "  $(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	 fi
 	@touch $@
 
@@ -140,8 +140,8 @@ $(full_target): $(build_target)
 	@cp $(build_dir)/libgloss/doc/porting.pdf $(TOOLCHAIN_PATH)/share/doc/newlib
 	@if [ -n "`cat $(SRC_DIR)/newlib/configure | grep _NEWLIB_VERSION | cut -f3 -d'"' | sed 's,[^0-9.],,g'`" ] ; then \
 	   version_string="`cat $(SRC_DIR)/newlib/configure | grep _NEWLIB_VERSION | cut -f3 -d'"' | sed 's,[^0-9.],,g'`" ; \
-	   echo "newlib-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	   echo "  newlib-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	 else \
-	   echo "$(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	   echo "  $(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	 fi
 	@touch $@

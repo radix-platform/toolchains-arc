@@ -65,9 +65,9 @@ $(install_target): $(build_target)
 	@$(MAKE) $(environment) -j1 -C $(build_dir) install-{gdb,sim}
 	@( version_string="`cat $(SRC_DIR)/gdb/version.in | cut -f1,2,3 -d'.'`" ; \
 	   if [ -n "$${version_string}" ] ; then \
-	     echo "gdb-$${version_string}" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	     echo "  gdb-$${version_string}" >> $(TOOLCHAIN_PATH)/README ; \
 	   else \
-	     echo "$(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	     echo "  $(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	   fi ; \
 	 )
 	@touch $@

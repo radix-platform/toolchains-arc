@@ -129,9 +129,9 @@ $(static_install_target): $(static_build_target)
 	   patch="`cat $(build_dir)/gcc/bversion.h | grep '#define BUILDING_GCC_PATCHLEVEL' | cut -f3 -d' '`" ; \
 	   version_string="$${major}.$${minor}.$${patch}" ; \
 	   if [ -n "$${version_string}" ] ; then \
-	     echo "gcc-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	     echo "  gcc-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	   else \
-	     echo "$(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	     echo "  $(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	   fi ; \
 	 )
 	@touch $@
@@ -164,9 +164,9 @@ $(full_install_target): $(full_build_target)
 	   patch="`cat $(build_dir)/gcc/bversion.h | grep '#define BUILDING_GCC_PATCHLEVEL' | cut -f3 -d' '`" ; \
 	   version_string="$${major}.$${minor}.$${patch}" ; \
 	   if [ -n "$${version_string}" ] ; then \
-	     echo "gcc-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	     echo "  gcc-$${version_string}$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	   else \
-	     echo "$(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	     echo "  $(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	   fi ; \
 	 )
 	@touch $@

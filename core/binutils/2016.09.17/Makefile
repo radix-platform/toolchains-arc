@@ -61,10 +61,19 @@ $(install_target): $(build_target)
 	@mkdir -p $(install_dir)
 	@$(MAKE) -j1 -C $(build_dir) pdf-{binutils,gas,ld}
 	@$(MAKE) -j1 -C $(build_dir) install-{,pdf-}{binutils,gas,ld}
+	@echo ""                                       > $(TOOLCHAIN_PATH)/README
+	@echo "  TOOLCHAIN = $(TOOLCHAIN)"            >> $(TOOLCHAIN_PATH)/README
+	@echo "     TARGET = $(TARGET)"               >> $(TOOLCHAIN_PATH)/README
+	@echo "  BASE_PATH = $(TOOLCHAINS_BASE_PATH)" >> $(TOOLCHAIN_PATH)/README
+	@echo "  DIRECTORY = $(TOOLCHAIN_DIR)"        >> $(TOOLCHAIN_PATH)/README
+	@echo "    VERSION = $(TOOLCHAIN_VERSION)"    >> $(TOOLCHAIN_PATH)/README
+	@echo ""                                      >> $(TOOLCHAIN_PATH)/README
+	@echo "-----------"                           >> $(TOOLCHAIN_PATH)/README
+	@echo ""                                      >> $(TOOLCHAIN_PATH)/README
 	@if [ -n "`cat $(build_dir)/bfd/bfdver.h | grep BFD_VERSION_STRING | cut -f4 -d'"'`" ] ; then \
 	   version_string="`cat $(build_dir)/bfd/bfdver.h | grep BFD_VERSION_STRING | cut -f4 -d'"'`" ; \
-	   echo "binutils-$${version_string}" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	   echo "  binutils-$${version_string}" >> $(TOOLCHAIN_PATH)/README ; \
 	 else \
-	   echo "$(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/components.txt ; \
+	   echo "  $(subst $(TOP_BUILD_DIR_ABS)/,,$(CURDIR))$(if $(FLAVOUR),:$(FLAVOUR),)" >> $(TOOLCHAIN_PATH)/README ; \
 	 fi
 	@touch $@
