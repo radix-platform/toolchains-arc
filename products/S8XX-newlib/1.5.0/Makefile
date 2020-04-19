@@ -2,12 +2,12 @@
 
 COMPONENT_TARGETS = $(TOOLCHAIN_S8XX_NEWLIB)
 
-export TOOLCHAIN_VERSION = 1.2.3
+export TOOLCHAIN_VERSION = 1.5.0
 
 include ../../../build-system/config.mk
 
-REQUIRES  = core/gcc/2018.09.12^full
-REQUIRES += core/gdb/2018.09.12
+REQUIRES  = core/gcc/2020.03.16^full
+REQUIRES += core/gdb/2020.03.18
 
 # ======= __END_OF_REQUIRES__ =======
 

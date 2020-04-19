@@ -8,7 +8,7 @@ include ../../build-system/config.mk
 
 url         = $(DOWNLOAD_SERVER)/sources/tools/synopsys/arc-toolchain/newlib
 
-versions    = arc-2018.09.12
+versions    = arc-2020.03.18
 
 pkgname     = newlib
 

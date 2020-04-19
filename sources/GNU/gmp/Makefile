@@ -8,7 +8,7 @@ include ../../../build-system/config.mk
 
 url         = $(DOWNLOAD_SERVER)/sources/GNU/gmp
 
-versions    = 6.1.0
+versions    = 6.2.0
 
 tarballs    = $(addsuffix .tar.xz, $(addprefix gmp-, $(versions)))
 sha1s       = $(addsuffix .sha1sum, $(tarballs))

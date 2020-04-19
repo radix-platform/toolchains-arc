@@ -8,7 +8,7 @@ include ../../../build-system/config.mk
 
 url         = $(DOWNLOAD_SERVER)/sources/GNU/mpfr
 
-versions    = 3.1.3
+versions    = 4.0.2
 
 tarballs    = $(addsuffix .tar.xz, $(addprefix mpfr-, $(versions)))
 sha1s       = $(addsuffix .sha1sum, $(tarballs))

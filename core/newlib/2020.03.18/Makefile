@@ -12,18 +12,18 @@ include ../../../build-system/config.mk
 SOURCE_REQUIRES = sources/newlib
 
 ifeq ($(FLAVOUR),headers)
-REQUIRES  = core/binutils/2018.09.12
+REQUIRES  = core/binutils/2020.03.18
 endif
 ifeq ($(FLAVOUR),full)
-REQUIRES  = core/gcc/2018.09.12^static
+REQUIRES  = core/gcc/2020.03.16^static
 endif
 
 # ======= __END_OF_REQUIRES__ =======
 
-tar_xz_archive  = $(SRC_PACKAGE_PATH)/newlib/newlib-arc-2018.09.12.tar.xz
+tar_xz_archive  = $(SRC_PACKAGE_PATH)/newlib/newlib-arc-2020.03.18.tar.xz
 SRC_ARCHIVE     = $(tar_xz_archive)
-SRC_DIR         = $(TARGET_BUILD_DIR)/newlib-arc-2018.09.12
-src_dir_name    = newlib-arc-2018.09.12
+SRC_DIR         = $(TARGET_BUILD_DIR)/newlib-arc-2020.03.18
+src_dir_name    = newlib-arc-2020.03.18
 src_done        = $(TARGET_BUILD_DIR)/.source-done
 
 PATCHES       = PATCHES

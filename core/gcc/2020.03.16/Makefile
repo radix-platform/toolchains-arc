@@ -17,23 +17,23 @@ SOURCE_REQUIRES += sources/GNU/mpc
 
 ifneq ($(findstring newlib, $(TOOLCHAIN)),)
 ifeq ($(FLAVOUR),static)
-REQUIRES  = core/newlib/2018.09.12^headers
+REQUIRES  = core/newlib/2020.03.18^headers
 endif
 ifeq ($(FLAVOUR),full)
-REQUIRES  = core/newlib/2018.09.12^full
+REQUIRES  = core/newlib/2020.03.18^full
 endif
 endif
 
 
 # ======= __END_OF_REQUIRES__ =======
 
-tar_xz_archive        = $(SRC_PACKAGE_PATH)/gcc/gcc-arc-2018.09.12.tar.xz
-tar_xz_archive_gmp    = $(SRC_PACKAGE_PATH)/GNU/gmp/gmp-6.1.0.tar.xz
-tar_xz_archive_mpfr   = $(SRC_PACKAGE_PATH)/GNU/mpfr/mpfr-3.1.3.tar.xz
-tar_gz_archive_mpc    = $(SRC_PACKAGE_PATH)/GNU/mpc/mpc-1.0.3.tar.gz
+tar_xz_archive        = $(SRC_PACKAGE_PATH)/gcc/gcc-arc-2020.03.16.tar.xz
+tar_xz_archive_gmp    = $(SRC_PACKAGE_PATH)/GNU/gmp/gmp-6.2.0.tar.xz
+tar_xz_archive_mpfr   = $(SRC_PACKAGE_PATH)/GNU/mpfr/mpfr-4.0.2.tar.xz
+tar_gz_archive_mpc    = $(SRC_PACKAGE_PATH)/GNU/mpc/mpc-1.1.0.tar.gz
 SRC_ARCHIVE           = $(tar_xz_archive)
-SRC_DIR               = $(TARGET_BUILD_DIR)/gcc-arc-2018.09.12
-src_dir_name          = gcc-arc-2018.09.12
+SRC_DIR               = $(TARGET_BUILD_DIR)/gcc-arc-2020.03.16
+src_dir_name          = gcc-arc-2020.03.16
 src_done              = $(TARGET_BUILD_DIR)/.source-done
 gmp_src_done          = $(TARGET_BUILD_DIR)/.gmp-source-done
 mpfr_src_done         = $(TARGET_BUILD_DIR)/.mpfr-source-done
@@ -91,19 +91,19 @@ $(src_done): $(SRC_ARCHIVE) $(PATCHES_DEP)
 $(gmp_src_done): $(src_done)
 	@echo "Expanding $(tar_xz_archive_gmp)"
 	@tar xJf $(tar_xz_archive_gmp) -C $(TARGET_BUILD_DIR)
-	@cd $(SRC_DIR); ln -sf ../gmp-6.1.0 gmp
+	@cd $(SRC_DIR); ln -sf ../gmp-6.2.0 gmp
 	@touch $@
 
 $(mpfr_src_done): $(src_done)
 	@echo "Expanding $(tar_xz_archive_mpfr)"
 	@tar xJf $(tar_xz_archive_mpfr) -C $(TARGET_BUILD_DIR)
-	@cd $(SRC_DIR); ln -sf ../mpfr-3.1.3 mpfr
+	@cd $(SRC_DIR); ln -sf ../mpfr-4.0.2 mpfr
 	@touch $@
 
 $(mpc_src_done): $(src_done)
 	@echo "Expanding $(tar_gz_archive_mpc)"
 	@tar xzf $(tar_gz_archive_mpc) -C $(TARGET_BUILD_DIR)
-	@cd $(SRC_DIR); ln -sf ../mpc-1.0.3 mpc
+	@cd $(SRC_DIR); ln -sf ../mpc-1.1.0 mpc
 	@touch $@
 
 $(static_build_target): $(gmp_src_done) $(mpfr_src_done) $(mpc_src_done)

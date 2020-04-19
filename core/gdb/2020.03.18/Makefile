@@ -8,14 +8,14 @@ include ../../../build-system/config.mk
 
 SOURCE_REQUIRES = sources/binutils
 
-REQUIRES  = core/gcc/2018.09.12^full
+REQUIRES  = core/gcc/2020.03.16^full
 
 # ======= __END_OF_REQUIRES__ =======
 
-tar_xz_archive   = $(SRC_PACKAGE_PATH)/binutils/binutils-gdb-arc-2018.09.12.tar.xz
+tar_xz_archive   = $(SRC_PACKAGE_PATH)/binutils/binutils-gdb-arc-2020.03.18.tar.xz
 SRC_ARCHIVE      = $(tar_xz_archive)
-SRC_DIR          = $(TARGET_BUILD_DIR)/binutils-gdb-arc-2018.09.12
-src_dir_name     = binutils-gdb-arc-2018.09.12
+SRC_DIR          = $(TARGET_BUILD_DIR)/binutils-gdb-arc-2020.03.18
+src_dir_name     = binutils-gdb-arc-2020.03.18
 src_done         = $(SRC_DIR)/.source-done
 
 PATCHES       = PATCHES
